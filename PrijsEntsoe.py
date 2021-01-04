@@ -12,8 +12,8 @@ from bs4 import BeautifulSoup
 def Ophalen():
     nu = dt.datetime.now(dt.timezone.utc)
     morgen = nu + dt.timedelta(days=1)
-    urlvandaag = "https://transparency.entsoe.eu/transmission-domain/r2/dayAheadPrices/show?name=&defaultValue=false&viewType=TABLE&areaType=BZN&atch=false&dateTime.dateTime="+str(nu.day)+"."+str(nu.month)+"."+str(nu.year)+"+00:00|UTC|DAY&biddingZone.values=CTY|10YNL----------L!BZN|10YNL----------L&dateTime.timezone=UTC&dateTime.timezone_input=UTC"
-    urlmorgen = "https://transparency.entsoe.eu/transmission-domain/r2/dayAheadPrices/show?name=&defaultValue=false&viewType=TABLE&areaType=BZN&atch=false&dateTime.dateTime="+str(morgen.day)+"."+str(morgen.month)+"."+str(morgen.year)+"+00:00|UTC|DAY&biddingZone.values=CTY|10YNL----------L!BZN|10YNL----------L&dateTime.timezone=UTC&dateTime.timezone_input=UTC"
+    urlvandaag = "https://transparency.entsoe.eu/transmission-domain/r2/dayAheadPrices/show?name=&defaultValue=false&viewType=TABLE&areaType=BZN&atch=false&dateTime.dateTime="+"{:02d}".format(nu.day)+"."+"{:02d}".format(nu.month)+"."+str(nu.year)+"+00:00|UTC|DAY&biddingZone.values=CTY|10YNL----------L!BZN|10YNL----------L&dateTime.timezone=UTC&dateTime.timezone_input=UTC"
+    urlmorgen = "https://transparency.entsoe.eu/transmission-domain/r2/dayAheadPrices/show?name=&defaultValue=false&viewType=TABLE&areaType=BZN&atch=false&dateTime.dateTime="+"{:02d}".format(morgen.day)+"."+"{:02d}".format(morgen.month)+"."+str(morgen.year)+"+00:00|UTC|DAY&biddingZone.values=CTY|10YNL----------L!BZN|10YNL----------L&dateTime.timezone=UTC&dateTime.timezone_input=UTC"
     #print (urlvandaag)
     #print (urlmorgen)
     pagevandaag = requests.get(urlvandaag)
