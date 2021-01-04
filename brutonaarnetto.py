@@ -6,5 +6,5 @@
 
 
 def brutoprijs_naar_nettoprijs(brutoprijs):
-    nettomettoeslagen = float(brutoprijs) + 0.008 + 0.00053 + 0.15125 #kaleprijs + Easyenergyopslag + groene certificaten + Overheidsheffingen
+    nettomettoeslagen = float(brutoprijs) + 0.008 + 0.00053 + 0.1504 #kaleprijs + Easyenergyopslag + groene certificaten + Overheidsheffingen
     return nettomettoeslagen
