@@ -19,10 +19,13 @@ def prijsophalen():
     if (len(returnvaluesEasy)!= len(returnvaluesEntsoe)):
         print("aantal gegevens easy ", len(returnvaluesEasy))
         print("aantal gegevens entsoe ", len(returnvaluesEntsoe))
-    #if (float(returnvaluesEasy[0][1]) != float(returnvaluesEntsoe[0][1])):
-    #    print("prijs dit uur easy " , returnvaluesEasy[0][1])
-    #    print("prijs dit uur entsoe " , returnvaluesEntsoe[0][1])
-    #if (float(returnvaluesEasy[-1][1])!= float(returnvaluesEntsoe[-1][1])):
-    #    print("prijs laatste uur easy " , returnvaluesEasy[-1][1])
-    #    print("prijs laatste uur entsoe " , returnvaluesEntsoe[-1][1])
+    try:
+        if (float(returnvaluesEasy[0][1]) != float(returnvaluesEntsoe[0][1])):
+            print("prijs dit uur easy " , returnvaluesEasy[0][1])
+            print("prijs dit uur entsoe " , returnvaluesEntsoe[0][1])
+        if (float(returnvaluesEasy[-1][1])!= float(returnvaluesEntsoe[-1][1])):
+            print("prijs laatste uur easy " , returnvaluesEasy[-1][1])
+            print("prijs laatste uur entsoe " , returnvaluesEntsoe[-1][1])
+    except:
+        print("something went wrong, properly 1 or more sources doesn't provide data")
     return returnvalues
